@@ -132,7 +132,8 @@ async function streamToString(stream: Readable): Promise<string> {
       }
     })
   );
-  return Buffer.concat(chunks).toString('utf8');
+  // return Buffer.concat(chunks).toString('utf8');
+  return Buffer.concat(chunks).toString('base64');
 }
 class Golang extends EventEmitter {
   server: WebSocket;
